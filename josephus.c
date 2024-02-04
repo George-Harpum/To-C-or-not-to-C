@@ -9,15 +9,19 @@
 * and the general formula (size n and step k; where in the above the step is 2, every 2nd soldier dies).
 * The original josephus problem is for k=3, however the k=2 has an elegant solution I enjoy.
 */
-int josephus(int x); 
+
+typedef unsigned long long llu;
+llu josephus(llu n); 
 int g(int n, int k);
 
 int main() {
   int x = 42;
   printf("i; k=2, k=3\n");
   for (int i=0; i < x; i++) {
-      printf("%d; %d, %d\n", i, josephus(i), g(i, 3));
+      printf("%d; %d, %d\n", i, josephus((llu) i), g(i, 3));
   }
+  llu n = 1234567898765;
+  printf("n=%llu; %llu\n", n, josephus(n));
   return 0;
 }
 
@@ -40,8 +44,8 @@ int josephus(int n) {
   while (n >> i != 1) {
       i++; // finding highest bit
   }
-  int m = 1 << i; // making mask
-  int out = ((n ^ m) << 1) + 1;
+  llu m = (llu) 1 << i; // making mask
+  llu out = ((n ^ m) << 1) + 1;
   return out;
 }
 
