@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+// I know this is super ugly but I wanted to play around with pointers so that was my priority.
 
 typedef struct ArrayPtrAndSize {
     int* ptr;
