@@ -51,7 +51,7 @@ ptrSize_arr sieve(int n) {
             count++;
         }
     }
-    int *out_arr = malloc(count);
+    int *out_arr = malloc(count*sizeof(int));
     if (out_arr) {
         int i = 0;
         for (int j=0;j<n;j++) {
